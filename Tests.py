@@ -3,6 +3,7 @@ import time
 from SomePreviousAlgorithms import *
 from BinaryInsertSort import *
 from merge_sort import *
+from quick_sort import *
 
 
 MAX_RANGE = 10**4    
@@ -45,4 +46,4 @@ def check_with_method(sample: list[int], variations: list[int], func):
 
 random_sample = [randrange(-MAX_RANGE, MAX_RANGE) for _ in range(NUM_OF_ELEMENTS)]
 #check_with_method(sorted(random_sample), [randrange(-1000, 1000) for _ in range(100)], binary_search)
-check(random_sample, sorted, merge_sort, binary_insert_sort, merge_sort_without_rec)
+check(random_sample, sorted, merge_sort, binary_insert_sort, merge_sort_without_rec, quick_sort)
