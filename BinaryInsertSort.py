@@ -23,4 +23,3 @@ def binary_insert_sort(sample: list[int]) -> list[int]:
             else:
                 sorted_sample.insert(left, i)
     return sorted_sample
-

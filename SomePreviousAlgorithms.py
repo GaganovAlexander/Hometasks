@@ -64,5 +64,3 @@ def binary_search(sorted_sample: list[int], desired: int) -> int:
             return None
     elif left > right:
         return None
-
-
