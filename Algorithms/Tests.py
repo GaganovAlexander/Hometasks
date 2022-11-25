@@ -6,14 +6,10 @@ from merge_sort import *
 from quick_sort import *
 
 
-MAX_RANGE = 10**4    
-NUM_OF_ELEMENTS = 10**4 + 3
-
-
 def check(sample: list[int], bild_in_function, *functions):
     start_time = perf_counter()
     bild_in_result = bild_in_function(sample)
-    print(f'Bild in function: \033[34m{perf_counter() - start_time} \033[0mSeconds')
+    print(f'Build in function: \033[34m{perf_counter() - start_time} \033[0mSeconds')
     for func in functions:
         start_time = perf_counter()
         our_result = func(sample)
@@ -44,6 +40,10 @@ def check_with_method(sample: list[int], variations: list[int], func):
     print(f'Bild in method: {total_time_bi} Seconds')
     print(f'{func.__name__}: {total_time_of} Seconds')
 
-random_sample = [randrange(-MAX_RANGE, MAX_RANGE) for _ in range(NUM_OF_ELEMENTS)]
-#check_with_method(sorted(random_sample), [randrange(-1000, 1000) for _ in range(100)], binary_search)
-check(random_sample, sorted, merge_sort, binary_insert_sort, merge_sort_without_rec, quick_sort, quick_sort_one_for)
+
+if __name__ == '__main__':
+    MAX_RANGE = 10**4    
+    NUM_OF_ELEMENTS = 10**4 + 3
+    random_sample = [randrange(-MAX_RANGE, MAX_RANGE) for _ in range(NUM_OF_ELEMENTS)]
+    #check_with_method(sorted(random_sample), [randrange(-1000, 1000) for _ in range(100)], binary_search)
+    check(random_sample, sorted, merge_sort, binary_insert_sort, merge_sort_without_rec, quick_sort, quick_sort_one_for)

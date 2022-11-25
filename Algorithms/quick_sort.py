@@ -8,11 +8,12 @@ def quick_sort(sample: list[int]) -> list[int]:
         return quick_sort(leasser) + equal + quick_sort(greater)
 
 def quick_sort_one_for(sample: list[int]) -> list[int]:
-    if len(sample) <= 1:
-        return sample
-    if len(sample) == 2:
-        if sample[0] > sample[1]:
-            return sample[::-1]
+    if len(sample) <= 2:
+        if len(sample) == 2:
+            if sample[0] > sample[1]:
+                return sample[::-1]
+            else:
+                return sample
         else:
             return sample
     else:
