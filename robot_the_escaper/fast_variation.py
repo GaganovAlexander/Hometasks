@@ -9,7 +9,7 @@ def fast_var(map__):
     temp_points = [lab_cords]
 
     while temp_points:
-        for i in temp_points:
+        for i in temp_points.copy():
             for j in ((i[0]+1, i[1]), (i[0]-1, i[1]), (i[0], i[1]-1), (i[0], i[1]+1)):
                 if len(map_) > j[0] >= 0 and len(map_[0]) > j[1] >= 0 and map_[j[0]][j[1]] == 0:
                     cnt = 0
