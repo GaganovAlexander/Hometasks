@@ -1,12 +1,12 @@
 calls = {}
 def callCounter(func):
     def inner(*args, **kwargs):
-        if func.__name__ in calls:
-            calls[func.__name__] += 1
+        key = str(func)[len('<function '):-len(' at 0x000001D9FD6CEE60>')]
+        if key in calls:
+            calls[key] += 1
         else:
-            calls[func.__name__] = 1
+            calls[key] = 1
         return func(*args, **kwargs)
-
     return inner
 
 
