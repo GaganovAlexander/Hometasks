@@ -30,7 +30,7 @@ def append_test(collection):
 if __name__ == '__main__':
     np_array_ = np_array(LIST_, int32)
     array_ = array('i', LIST_)
-    deque_ = deque(LIST_, 10**4)
+    deque_ = deque(LIST_, 10**4+10**3)
     print('Change data speed test')
     change_test(LIST_)
     change_test(np_array_)
